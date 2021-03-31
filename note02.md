@@ -1,19 +1,10 @@
 
-```
-ssh -Y main02.local
-
-main02% cd ~/proj/mikan/docker
-main02% ./build.sh
-main02% ./run.sh
-
-container# wget https://github.com/uchan-nos/mikanos-build/blob/master/day01/bin/hello.efi?raw=true -O hello.efi
-container# $HOME/osbook/devenv/run_qemu.sh hello.efi
-```
+main02% cd ~/proj/mikan/workspace && git clone https://github.com/uchan-nos/mikanos.git
 
 ## 2.2 Hello
 
 ```
-cd $HOME/mikanos && git checkout osbook_day02a
+cd $HOME/workspace/mikanos && git checkout osbook_day02a
 cd $HOME/edk2 && source edksetup.sh && build
 $HOME/osbook/devenv/run_qemu.sh ./Build/MikanLoaderX64/DEBUG_CLANG38/X64/Loader.efi
 ```
@@ -21,7 +12,7 @@ $HOME/osbook/devenv/run_qemu.sh ./Build/MikanLoaderX64/DEBUG_CLANG38/X64/Loader.
 ## 2.7 メモリマップの確認
 
 ```
-cd $HOME/mikanos && git checkout osbook_day02b
+cd $HOME/workspace/mikanos && git checkout osbook_day02b
 cd $HOME/edk2 && source edksetup.sh && build
 $HOME/osbook/devenv/run_qemu.sh ./Build/MikanLoaderX64/DEBUG_CLANG38/X64/Loader.efi
 mount -o loop disk.img ./mnt

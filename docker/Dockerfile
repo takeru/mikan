@@ -9,8 +9,7 @@ WORKDIR $HOME
 RUN git clone https://github.com/uchan-nos/mikanos-build.git osbook
 RUN cd $HOME/osbook/devenv && ansible-playbook -K -i ansible_inventory ansible_provision.yml
 
-RUN git clone https://github.com/uchan-nos/mikanos.git
-RUN ln -s $HOME/mikanos/MikanLoaderPkg $HOME/edk2/
+RUN ln -s $HOME/workspace/mikanos/MikanLoaderPkg $HOME/edk2/
 
 COPY ./files/ $HOME/files/
 RUN cd $HOME/edk2 && \
